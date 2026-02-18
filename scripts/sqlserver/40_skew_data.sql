@@ -5,7 +5,16 @@ USE perf_lab;
 GO
 
 SET NOCOUNT ON;
+SET ANSI_NULLS ON;
+SET QUOTED_IDENTIFIER ON;
+SET ANSI_PADDING ON;
+SET ANSI_WARNINGS ON;
+SET CONCAT_NULL_YIELDS_NULL ON;
+SET NUMERIC_ROUNDABORT OFF;
+GO
 
+
+SET IDENTITY_INSERT dbo.customers ON;
 -- 1) Add new VIP customers
 ;WITH n AS (
     SELECT TOP (5000) ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS n
@@ -18,7 +27,9 @@ SELECT
     N'VIP',
     DATEADD(DAY, -ABS(CHECKSUM(NEWID())) % 365, SYSUTCDATETIME())
 FROM n;
+SET IDENTITY_INSERT dbo.customers OFF;
 
+SET IDENTITY_INSERT dbo.orders ON;
 -- 2) Add recent orders (10 per new VIP customer = 50k orders)
 ;WITH n AS (
     SELECT TOP (50000) ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS n
@@ -32,7 +43,10 @@ SELECT
     N'Completed',
     CAST(100 + (ABS(CHECKSUM(NEWID())) % 500000) / 100.0 AS decimal(12,2))
 FROM n;
+SET IDENTITY_INSERT dbo.orders OFF;
 
+
+SET IDENTITY_INSERT dbo.order_items ON;
 -- 3) Add order items (5 per new order = 250k items)
 ;WITH n AS (
     SELECT TOP (250000) ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS n
@@ -46,6 +60,7 @@ SELECT
     1 + (ABS(CHECKSUM(NEWID())) % 4),
     CAST(10 + (ABS(CHECKSUM(NEWID())) % 50000) / 100.0 AS decimal(12,2))
 FROM n;
+SET IDENTITY_INSERT dbo.order_items OFF;
 
 -- IMPORTANT: do NOT run UPDATE STATISTICS here (Lab 03 wants stale stats first).
 PRINT 'Skew data inserted. Do NOT update stats yet.';
