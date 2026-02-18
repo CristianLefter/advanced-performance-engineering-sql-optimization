@@ -18,23 +18,36 @@ Then start with:
 - `labs/lab-00-codespaces-connect.md`
 - `labs/lab-01-evidence-pack-baseline.md`
 
-## Connecting from VS Code (web or local)
+## Connecting from VS Code
 
-### SQL Server
-- Host: `localhost`
+### In Codespaces (recommended)
+Your VS Code runs inside the **workspace** container. Connect using the **service names**:
+
+#### SQL Server
+- Host: `mssql`
 - Port: `1433`
 - User: `sa`
 - Password: `YourStrong!Passw0rd`
 - Database: `perf_lab`
 
-### PostgreSQL
-- Host: `localhost`
+#### PostgreSQL
+- Host: `postgres`
 - Port: `5432`
 - User: `postgres`
 - Password: `postgres`
 - Database: `perf_lab`
 
-> If you use **local VS Code**, you can connect to forwarded ports the same way.
+### From your local machine (optional richer UI)
+Use the forwarded ports shown in the **Ports** tab:
+
+#### SQL Server
+- Host: `localhost`
+- Port: `1433`
+
+#### PostgreSQL
+- Host: `localhost`
+- Port: `5432`
+
 
 ## Repository map
 
