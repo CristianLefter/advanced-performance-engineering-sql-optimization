@@ -72,3 +72,11 @@ In your notes:
 - the plan delta (1–3 bullets)
 - the metric delta (reads + elapsed)
 - trade-offs (write overhead, memory, plan stability)
+
+## Postgres note: index may be ignored (and that can be OK)
+PostgreSQL may still choose a Seq Scan even when an ESR index exists, especially when:
+- a large fraction of the table qualifies (low selectivity)
+- data is warm in cache
+- the planner estimates sequential access is cheaper
+
+Use `SET enable_seqscan = off` **only as a diagnostic** to see whether an index-path plan exists and how it would behave.
