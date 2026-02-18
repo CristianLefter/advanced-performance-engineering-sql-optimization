@@ -1,0 +1,15 @@
+# Evidence output
+evidence-pack/**/before/**
+evidence-pack/**/after/**
+!evidence-pack/template/**
+*.sqlplan
+*.json
+*.xml
+*.txt
+
+# OS / editor
+.DS_Store
+.vscode/settings.json
+
+# Local tooling
+*.log
