@@ -7,6 +7,11 @@ evidence-pack/**/after/**
 *.xml
 *.txt
 
+# Evidence packs (keep template + .gitkeep only)
+evidence-pack/**
+!evidence-pack/template/**
+!evidence-pack/**/.gitkeep
+
 # OS / editor
 .DS_Store
 .vscode/settings.json
