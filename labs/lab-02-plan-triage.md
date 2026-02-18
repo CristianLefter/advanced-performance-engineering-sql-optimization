@@ -40,3 +40,13 @@ In 5 minutes, decide:
 3) Implement only ONE change and re-measure.
 
 (Next labs will formalize each fix category.)
+
+## Suggested “one change” for this lab (Query rewrite)
+Use the SARGable version of the baseline query:
+
+- PostgreSQL: `scripts/postgres/20_sargable_fix.sql`
+- SQL Server: `scripts/sqlserver/20_sargable_fix.sql`
+
+Capture a new Evidence Pack change folder:
+`evidence-pack/lab-02/sargable-fix/before` and `after`
+
