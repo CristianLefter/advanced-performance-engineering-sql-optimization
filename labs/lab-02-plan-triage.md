@@ -50,3 +50,5 @@ Use the SARGable version of the baseline query:
 Capture a new Evidence Pack change folder:
 `evidence-pack/lab-02/sargable-fix/before` and `after`
 
+
+> Note: without a supporting index, a SARGable rewrite may not change the access path; and an index can be slower if it introduces physical reads (cold cache).
