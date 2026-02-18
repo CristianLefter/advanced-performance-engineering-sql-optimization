@@ -34,3 +34,4 @@ We will introduce skew and then measure:
 - compare plan estimates before vs after stats refresh
 
 (Next lab will teach targeted fixes: stats refresh, extended stats, filtered indexes, and query rewrites.)
+> Note: after refreshing stats, runtime improvement may be small; the primary learning signal is estimate vs actual changes and whether plan choices become more appropriate.
