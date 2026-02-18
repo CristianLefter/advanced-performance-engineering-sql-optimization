@@ -1,0 +1,23 @@
+{
+  "name": "APE + SQL Optimization (SQL Server + Postgres)",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "postgres",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [1433, 5432],
+  "portsAttributes": {
+    "1433": { "label": "SQL Server", "onAutoForward": "notify" },
+    "5432": { "label": "PostgreSQL", "onAutoForward": "notify" }
+  },
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-mssql.mssql",
+        "ms-ossdata.vscode-postgresql",
+        "redhat.vscode-yaml",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
+}
