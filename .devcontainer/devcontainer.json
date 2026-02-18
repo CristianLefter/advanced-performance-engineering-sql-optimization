@@ -1,7 +1,7 @@
 {
-  "name": "APE + SQL Optimization (SQL Server + Postgres)",
+  "name": "APE Labs (workspace + SQL Server + Postgres)",
   "dockerComposeFile": "docker-compose.yml",
-  "service": "postgres",
+  "service": "workspace",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "shutdownAction": "stopCompose",
   "forwardPorts": [1433, 5432],
