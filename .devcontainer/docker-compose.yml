@@ -35,7 +35,9 @@ services:
       retries: 30
 
   workspace:
-    image: mcr.microsoft.com/devcontainers/base:ubuntu-22.04
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: perf-workspace
     volumes:
       - ..:/workspaces/${localWorkspaceFolderBasename}:cached
