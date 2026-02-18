@@ -3,20 +3,28 @@ set -euo pipefail
 
 echo "==> Devcontainer ready."
 
-echo "==> Checking that database ports are listening (services started by docker-compose)..."
-for i in {1..60}; do
-  if (nc -z localhost 5432 >/dev/null 2>&1) && (nc -z localhost 1433 >/dev/null 2>&1); then
-    echo "✅ Ports 5432 (Postgres) and 1433 (SQL Server) are reachable."
+echo "==> Waiting for Postgres on postgres:5432..."
+for i in {1..120}; do
+  if bash -lc 'cat < /dev/null > /dev/tcp/postgres/5432' 2>/dev/null; then
+    echo "✅ Postgres reachable."
     break
   fi
   sleep 2
 done
 
-echo ""
-echo "Next steps (run via VS Code extensions):"
-echo "  - scripts/postgres/00_setup.sql"
-echo "  - scripts/sqlserver/00_setup.sql"
-echo ""
-echo "Connection info:"
-echo "  Postgres: localhost:5432 db=perf_lab user=postgres pass=postgres"
-echo "  SQL Server: localhost,1433 db=master user=sa pass=YourStrong!Passw0rd"
+echo "==> Waiting for SQL Server on mssql:1433..."
+for i in {1..120}; do
+  if bash -lc 'cat < /dev/null > /dev/tcp/mssql/1433' 2>/dev/null; then
+    echo "✅ SQL Server reachable."
+    break
+  fi
+  sleep 2
+done
+
+echo "==> Initializing Postgres (perf_lab)..."
+psql -h postgres -U postgres -d perf_lab < scripts/postgres/00_setup.sql
+
+echo "==> Initializing SQL Server (perf_lab)..."
+sqlcmd -C -S mssql -U sa -P 'YourStrong!Passw0rd' -i scripts/sqlserver/00_setup.sql
+
+echo "✅ Lab environment ready (both engines initialized)."
