@@ -22,7 +22,8 @@ for i in {1..120}; do
 done
 
 echo "==> Initializing Postgres (perf_lab)..."
-psql -h postgres -U postgres -d perf_lab < scripts/postgres/00_setup.sql
+PGPASSWORD=postgres psql -h postgres -U postgres -d perf_lab < scripts/postgres/00_setup.sql
+
 
 echo "==> Initializing SQL Server (perf_lab)..."
 sqlcmd -C -S mssql -U sa -P 'YourStrong!Passw0rd' -i scripts/sqlserver/00_setup.sql
