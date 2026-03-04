@@ -14,7 +14,7 @@
     "vscode": {
       "extensions": [
         "ms-mssql.mssql",
-        "ms-ossdata.vscode-postgresql",
+        "ms-ossdata.vscode-pgsql",
         "redhat.vscode-yaml",
         "yzhang.markdown-all-in-one"
       ]
