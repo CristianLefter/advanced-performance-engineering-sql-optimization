@@ -1,15 +1,16 @@
-# Evidence output
+# Evidence output artifacts
 evidence-pack/**/before/**
 evidence-pack/**/after/**
-!evidence-pack/template/**
 *.sqlplan
 *.json
 *.xml
 *.txt
 
-# Evidence packs (keep template + .gitkeep only)
-evidence-pack/**
-!evidence-pack/template/**
+# Evidence Pack structure and Markdown records
+!evidence-pack/
+!evidence-pack/evidence-pack-template.md
+!evidence-pack/lab-*/
+!evidence-pack/lab-*/*.md
 !evidence-pack/**/.gitkeep
 
 # OS / editor

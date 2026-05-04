@@ -55,23 +55,32 @@ Use the forwarded ports shown in the **Ports** tab:
 - `datasets/` – schema notes + data dictionary
 - `scripts/` – setup + “bad → better” queries per engine
 - `labs/` – step-by-step labs aligned to the course
-- `evidence-pack/` – templates + collection helpers
+- `evidence-pack/` – Evidence Pack template, lab-specific proof files, raw before/after artifacts, and collection helpers
 
 ## Evidence Pack convention
 
-For every change you make, create a folder:
+The Evidence Pack is the proof record for each lab.
 
-```
-evidence-pack/<lab-id>/<change-id>/
-  before/
-  after/
-  notes.md
+Use one main Markdown file per lab:
+
+```text
+evidence-pack/<lab-id>/<evidence-pack-name>.md
 ```
 
-Each `before/` and `after/` includes:
-- plan output
-- runtime metrics (time / CPU / reads/buffers)
-- a short narrative of what changed and why
+That Markdown file is the primary record. It contains the workload contract, baseline query, capture commands, raw runtime metrics, plan observations, bottleneck notes, before/after comparisons, and the final decision.
+
+Each lab also has optional raw artifact folders:
+
+```text
+evidence-pack/<lab-id>/before/
+evidence-pack/<lab-id>/after/
+```
+
+Use `before/` for raw artifacts captured before a tuning change, such as SQL Server XML plans, copied message output, PostgreSQL EXPLAIN output, or screenshots.
+
+Use `after/` for raw artifacts captured after exactly one tuning change.
+
+The Markdown file tells the story. The `before/` and `after/` folders hold the raw proof.
 
 ## License
 MIT (see `LICENSE`).
