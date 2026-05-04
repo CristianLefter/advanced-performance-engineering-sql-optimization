@@ -27,7 +27,22 @@ We will run the same scenario on:
 - Prefer low-risk changes first (query shape, returned columns, indexes).
 - Note tradeoffs (write amplification, maintenance, plan stability).
 
-## What we capture (evidence pack)
+## What we capture (Evidence Pack)
+
+Use the lab-specific Evidence Pack file:
+
+- `evidence-pack/lab-07/capstone.md`
+
+Use this folder for raw before-state artifacts:
+
+- `evidence-pack/lab-07/before/`
+
+Use this folder for raw after-state artifacts:
+
+- `evidence-pack/lab-07/after/`
+
+The Markdown file is the main record. The folders are only for raw evidence files.
+
 ### Postgres
 - EXPLAIN (ANALYZE, BUFFERS) for baseline and after each fix
 - Any notes about spills, row estimates vs actual, and buffer reads

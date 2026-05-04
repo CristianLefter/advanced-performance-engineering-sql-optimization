@@ -8,6 +8,21 @@ Learn to spot and explain “estimate vs actual” mismatches and connect them t
 - parameter sensitivity
 
 ## What you capture
+
+Use the lab-specific Evidence Pack file:
+
+- `evidence-pack/lab-03/estimation-gap.md`
+
+Use this folder for raw before-state artifacts:
+
+- `evidence-pack/lab-03/before/`
+
+Use this folder for raw after-state artifacts:
+
+- `evidence-pack/lab-03/after/`
+
+The Markdown file is the main record. The folders are only for raw evidence files.
+
 ### PostgreSQL
 - `EXPLAIN (ANALYZE, BUFFERS, VERBOSE)` including “rows” and “Rows Removed by Filter”
 - optional: `EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)` for structured diffing

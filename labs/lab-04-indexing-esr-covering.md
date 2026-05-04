@@ -26,8 +26,13 @@ Same business question as Lab 01/02:
 - Actual plan (VS Code MSSQL extension)
 - `SET STATISTICS IO, TIME ON`
 
-Store evidence in:
-- `evidence-pack/lab-04/index-esr/before`
+Use the lab-specific Evidence Pack file:
+
+- `evidence-pack/lab-04/indexing-esr-covering.md`
+
+Use this folder for raw before-state artifacts:
+
+- `evidence-pack/lab-04/before/`
 
 ## Index design
 ### PostgreSQL
@@ -50,8 +55,11 @@ What it targets:
 2) Rerun the tuned query (SARGable form).
 3) Capture new plan + metrics.
 
-Store evidence in:
-- `evidence-pack/lab-04/index-esr/after`
+Use this folder for raw after-state artifacts:
+
+- `evidence-pack/lab-04/after/`
+
+The Markdown file is the main record. The folders are only for raw evidence files.
 
 ## What to look for
 ### Plan shape improvements

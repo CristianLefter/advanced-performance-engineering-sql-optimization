@@ -47,8 +47,19 @@ Use the SARGable version of the baseline query:
 - PostgreSQL: `scripts/postgres/20_sargable_fix.sql`
 - SQL Server: `scripts/sqlserver/20_sargable_fix.sql`
 
-Capture a new Evidence Pack change folder:
-`evidence-pack/lab-02/sargable-fix/before` and `after`
+Use the lab-specific Evidence Pack file:
+
+- `evidence-pack/lab-02/plan-triage.md`
+
+Use this folder for raw before-state artifacts:
+
+- `evidence-pack/lab-02/before/`
+
+Use this folder for raw after-state artifacts:
+
+- `evidence-pack/lab-02/after/`
+
+The Markdown file is the main record. The folders are only for raw evidence files.
 
 
 > Note: without a supporting index, a SARGable rewrite may not change the access path; and an index can be slower if it introduces physical reads (cold cache).

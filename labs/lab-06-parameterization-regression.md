@@ -9,7 +9,21 @@ We cover:
 - SQL Server: parameter sensitivity + mitigations + Query Store guardrails (optional)
 - Postgres: generic vs custom plans for prepared statements + practical monitoring guardrails
 
-## What we measure (evidence)
+## What we measure (Evidence Pack)
+
+Use the lab-specific Evidence Pack file:
+
+- `evidence-pack/lab-06/parameterization-regression.md`
+
+Use this folder for raw before-state artifacts:
+
+- `evidence-pack/lab-06/before/`
+
+Use this folder for raw after-state artifacts:
+
+- `evidence-pack/lab-06/after/`
+
+The Markdown file is the main record. The folders are only for raw evidence files.
 
 ### SQL Server
 - SET STATISTICS IO, TIME ON

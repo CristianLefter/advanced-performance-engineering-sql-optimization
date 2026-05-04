@@ -8,7 +8,22 @@ We refactor a query so it does **less work**:
 
 We’ll run “before/after” on **Postgres** and **SQL Server**, capture plans + runtime/IO, and write down what changed.
 
-## What we measure (evidence)
+## What we measure (Evidence Pack)
+
+Use the lab-specific Evidence Pack file:
+
+- `evidence-pack/lab-05/query-refactoring.md`
+
+Use this folder for raw before-state artifacts:
+
+- `evidence-pack/lab-05/before/`
+
+Use this folder for raw after-state artifacts:
+
+- `evidence-pack/lab-05/after/`
+
+The Markdown file is the main record. The folders are only for raw evidence files.
+
 ### Postgres
 - `EXPLAIN (ANALYZE, BUFFERS)` for **before** and **after**
 - Look for:
