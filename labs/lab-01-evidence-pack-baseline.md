@@ -20,14 +20,14 @@ By the end of this lab, you should have:
 
 | Purpose | File |
 |---|---|
-| Reusable Evidence Pack template | `eevidence-pack/evidence-pack-template.md` |
-| Lab-specific Evidence Pack | `eevidence-pack/lab-01/baseline-orders-customers.md` |
+| Reusable Evidence Pack template | `evidence-pack/evidence-pack-template.md` |
+| Lab-specific Evidence Pack | `evidence-pack/lab-01/baseline-orders-customers.md` |
 | SQL Server baseline query | `scripts/sqlserver/10_baseline_query.sql` |
 | PostgreSQL baseline query | `scripts/postgres/10_baseline_query.sql` |
-| SQL Server before-state artifacts | `eevidence-pack/lab-01/before/` |
-| Future after-state artifacts | `eevidence-pack/lab-01/after/` |
+| SQL Server before-state artifacts | `evidence-pack/lab-01/before/` |
+| Future after-state artifacts | `evidence-pack/lab-01/after/` |
 
-> For this lab, use the pre-created file `eevidence-pack/lab-01/baseline-orders-customers.md`. The generic template exists so you can create new Evidence Packs later.
+> For this lab, use the pre-created file `evidence-pack/lab-01/baseline-orders-customers.md`. The generic template exists so you can create new Evidence Packs later.
 
 ---
 
@@ -48,9 +48,9 @@ evidence-pack/lab-01/after/
 Use the `before/` folder for files captured before any tuning change, such as:
 
 ```text
-eevidence-pack/lab-01/before/orders_baseline_before.xml
-eevidence-pack/lab-01/before/sqlserver_messages_before.txt
-eevidence-pack/lab-01/before/postgres_explain_before.txt
+evidence-pack/lab-01/before/orders_baseline_before.xml
+evidence-pack/lab-01/before/sqlserver_messages_before.txt
+evidence-pack/lab-01/before/postgres_explain_before.txt
 ```
 
 The `after/` folder stays empty for now. It will be used later when a lab applies one tuning change and captures the after-state evidence.
@@ -62,7 +62,7 @@ The `after/` folder stays empty for now. It will be used later when a lab applie
 Open:
 
 ```text
-eevidence-pack/lab-01/baseline-orders-customers.md
+evidence-pack/lab-01/baseline-orders-customers.md
 ```
 
 Review the first sections:
@@ -121,7 +121,7 @@ After the query completes:
 Then open the XML plan result and save it as:
 
 ```text
-eevidence-pack/lab-01/before/orders_baseline_before.xml
+evidence-pack/lab-01/before/orders_baseline_before.xml
 ```
 
 Update Section 4.2 of the Evidence Pack to point to this file.
@@ -185,7 +185,7 @@ After the query completes:
 Optionally, you may also save the raw output as:
 
 ```text
-eevidence-pack/lab-01/before/postgres_explain_before.txt
+evidence-pack/lab-01/before/postgres_explain_before.txt
 ```
 
 If you do, reference that file in Section 11.
@@ -227,8 +227,8 @@ Leave the after-state and final decision sections empty for now.
 
 You are done when:
 
-- `eevidence-pack/lab-01/baseline-orders-customers.md` contains both SQL Server and PostgreSQL before-state evidence
-- `eevidence-pack/lab-01/before/orders_baseline_before.xml` exists, if you captured the SQL Server XML plan as a file
+- `evidence-pack/lab-01/baseline-orders-customers.md` contains both SQL Server and PostgreSQL before-state evidence
+- `evidence-pack/lab-01/before/orders_baseline_before.xml` exists, if you captured the SQL Server XML plan as a file
 - The bottleneck notes identify where the work is concentrated without proposing a fix
 
 This gives you the first reusable baseline for the course.
