@@ -1,6 +1,7 @@
 USE perf_lab;
 GO
 
+
 SELECT
     o.order_id,
     o.order_date,

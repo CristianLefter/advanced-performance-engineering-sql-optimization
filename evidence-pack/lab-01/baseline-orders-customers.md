@@ -45,14 +45,7 @@ Record the exact workload rules. Do not silently change them after capturing met
 Paste the exact logical query used for this capture. Do not rewrite it after recording the metrics.
 
 ```sql
-SELECT
-    o.order_id,
-    o.order_date,
-    c.customer_name
-FROM dbo.orders o
-JOIN dbo.customers c
-    ON o.customer_id = c.customer_id
-WHERE o.order_date >= '2023-01-01';
+-- Baseline Query
 ```
 
 ---
